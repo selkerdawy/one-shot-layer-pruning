@@ -273,18 +273,15 @@ def get_cifar_loader(dataloader):
 
 
 def plot(accs):
-    from matplotlib.backends.backend_pdf import PdfPages
     import matplotlib.pyplot as plt
     import matplotlib as mpl
+
     plt.style.use('seaborn')
 
     plt.rc('font', family='serif', serif='Times')
-    plt.rc('text', usetex=True)
     plt.rc('xtick', labelsize=8)
     plt.rc('ytick', labelsize=8)
     plt.rc('axes', labelsize=8)
-    mpl.rcParams['text.usetex']=True
-    #mpl.rcParams['text.latex.unicode']=True
 
     fig, ax = plt.subplots()
     fig.subplots_adjust(left=.15, bottom=.12, right=.99, top=.97)
@@ -301,17 +298,10 @@ def plot(accs):
     for i, v in enumerate(acc):
         plt.text(i*w - bw/1.7, v + .4, str(int(round(v))), color='blue')#, fontsize=14)
 
-    # width as measured in inkscape
-    width = 3.487
-    height = width / 1.#1.618
-
     ax.set_ylabel('Accuracy', size='large')
     plt.xticks(range(0,len(acc)*w,w), lbls, rotation='vertical')
     ax.set_xticklabels(lbls)
 
-    print('Saving plot to vgg19_cifar100_imprint.pdf ...')
-    with PdfPages('vgg19_cifar100_imprint.pdf') as pdf:
-        pdf.savefig(fig)
     plt.show()
 
 def main():
