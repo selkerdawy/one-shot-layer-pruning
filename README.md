@@ -18,4 +18,17 @@ Download pretrained weights for CIFAR100 vgg19_bn from [here](https://drive.goog
 python imprint_cifar.py -d cifar100 --arch vgg19_bn --pretrained PATH_TO_MODEL -c cifar100_vgg
 ```
 
+## Cite
+
+If you find this code useful in your research, please consider citing:
+```
+@inproceedings{elkerdawy2020one,
+  title={One-Shot Layer-Wise Accuracy Approximation For Layer Pruning},
+  author={Elkerdawy, Sara and Elhoushi, Mostafa and Singh, Abhineet and Zhang, Hong and Ray, Nilanjan},
+  booktitle={2020 IEEE International Conference on Image Processing (ICIP)},
+  pages={2940--2944},
+  year={2020},
+  organization={IEEE}
+}
+```
 
